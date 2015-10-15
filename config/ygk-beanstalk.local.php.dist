@@ -1,0 +1,25 @@
+<?php
+return array(
+    'service_manager' => array(
+        'factories' => array(
+            'Xenprosys\Ygk\Beanstalk\Service\BeanstalkService'  => 'Xenprosys\Ygk\Beanstalk\Factory\BeanstalkServiceFactory'
+            'Xenprosys\Ygk\Beanstalk\Service\BeanstalkWorkerService'  => 'Xenprosys\Ygk\Beanstalk\Factory\BeanstalkWorkerServiceFactory'
+        ),
+    ),
+    'ygk' => array(
+        'beanstalk-adapter' => array(
+            'servers' => array(
+                'client' => array(
+                    array('host' =>  '127.0.0.1', 'port' => 11103)
+                    )
+                ),
+                'workers' => array(
+                     array('host' =>  '127.0.0.1', 'port' => 11103)
+                    )
+                )
+            )
+        ),
+        'workers' => array(
+        )
+    )
+);
